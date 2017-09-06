@@ -30,7 +30,7 @@
             android:layout_marginTop="8dp"
             android:background="@android:color/holo_red_light"
             android:text="X"
-            android:onClick="CloseAddTab"
+            android:onClick="CloseAddItemTab"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.961"
             app:layout_constraintLeft_toLeftOf="parent"

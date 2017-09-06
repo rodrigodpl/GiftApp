@@ -3,7 +3,7 @@
     <string name="mygiftlist_button_string">My giftlist</string>
     <string name="myfriends_button_string">My friends</string>
     <string name="settings_button_string">Settings</string>
-    <string name="red_button_string">---</string>
+    <string name="myprofile_button_string">My profile</string>
     <string name="own_gift_fragment_img_desc">Gift picture</string>
     <string name="title_activity_my_giftlist">MyGiftlist</string>
     <string name="large_text">

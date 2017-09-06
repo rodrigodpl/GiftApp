@@ -52,7 +52,7 @@ public class DBManager extends SQLiteOpenHelper {
         contentValues.put("location_lat", location_lat);
         contentValues.put("street", location_lon);
         contentValues.put("url", url);
-        contentValues.put("image_path", image_path);
+        //contentValues.put("image_path", image_path);
         db.insert("own_gifts", null, contentValues);
         return true;
     }

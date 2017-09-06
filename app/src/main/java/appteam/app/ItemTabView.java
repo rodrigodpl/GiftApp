@@ -48,7 +48,7 @@ public class ItemTabView extends RelativeLayout {
 
     public void SetDataFromTab(AddItemView AddItemTab){
 
-        title.setText(AddItemTab.comm.getText());
+        title.setText(AddItemTab.title.getText());
         description.setText(AddItemTab.comm.getText());
         //     ...
     }

@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 public class GiftlistActivity extends AppCompatActivity {
 
     AddItemView addItemTab;
@@ -28,17 +30,17 @@ public class GiftlistActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                OpenAddTab(view);
+                OpenAddItemTab(view);
 
             }
         });
-
-        addItemTab = (AddItemView) findViewById(R.id.AddItemTab);
+        fab.bringToFront();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        addItemTab = (AddItemView) findViewById(R.id.AddItemTab);
     }
 
-    public void CloseAddTab(View view){
+    public void CloseAddItemTab(View view){
 
         addItemTab.title.setText("");
         addItemTab.url.setText("");
@@ -47,13 +49,13 @@ public class GiftlistActivity extends AppCompatActivity {
         findViewById(R.id.AddItemTab).setVisibility(View.GONE);
     }
 
-    public void OpenAddTab(View view){
+    public void OpenAddItemTab(View view){
         if (findViewById(R.id.AddItemTab).getVisibility() == View.GONE) {
             findViewById(R.id.AddItemTab).setVisibility(View.VISIBLE);
         }
     }
 
-    public void OpenAddTabLoaded(View view){
+    public void OpenAddItemTabLoaded(View view){
 
         addItemTab.title.setText(R.string.example1);
         addItemTab.url.setText(R.string.example2);

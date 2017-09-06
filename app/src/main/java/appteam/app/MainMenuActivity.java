@@ -13,21 +13,36 @@ public class MainMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
     }
 
-    public void OpenGiftlist(View view) {
-        Intent intent = new Intent(this, GiftlistActivity.class);
-        startActivity(intent);
+    public void OpenActivity(View view){
+
+        Intent intent;
+
+        switch(view.getId()){
+
+            case R.id.mygiftlist_button:
+                intent = new Intent(this, GiftlistActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.myfriends_button:
+                intent = new Intent(this, FriendsActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.settings_button:
+                intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.myprofile_button:
+                intent = new Intent(this, MyProfileActivity.class);
+                startActivity(intent);
+                break;
+
+            default:
+                break;
+        }
+
     }
-
-    public void OpenFriends(View view) {
-        Intent intent = new Intent(this, FriendsActivity.class);
-        startActivity(intent);
-    }
-
-    public void OpenSettings(View view) {
-        Intent intent = new Intent(this, SettingsActivity.class);
-        startActivity(intent);
-    }
-
-
 
 }

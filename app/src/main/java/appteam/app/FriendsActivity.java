@@ -10,6 +10,7 @@ import android.content.Intent;
 
 public class FriendsActivity extends AppCompatActivity {
 
+    AddFriendView addFriendTab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,12 +23,24 @@ public class FriendsActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                OpenAddFriendTab(view);
             }
         });
+        fab.bringToFront();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        addFriendTab = (AddFriendView) findViewById(R.id.AddFriendTab);
 
+    }
+
+    public void CloseAddFriendTab(View view){
+
+        findViewById(R.id.AddFriendTab).setVisibility(View.GONE);
+    }
+
+    public void OpenAddFriendTab(View view){
+        if (findViewById(R.id.AddFriendTab).getVisibility() == View.GONE) {
+            findViewById(R.id.AddFriendTab).setVisibility(View.VISIBLE);
+        }
     }
 
     public void DeleteFriend(View view) {
