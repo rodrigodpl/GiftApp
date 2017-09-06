@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="appteam.app.FriendsActivity"
+    tools:showIn="@layout/activity_giftlist">
+
+
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/giftlistFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <appteam.app.ItemTabView
+            android:id="@+id/ExampleGift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </appteam.app.ItemTabView>
+
+        <appteam.app.AddItemView
+            android:id="@+id/AddItemTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+        </appteam.app.AddItemView>
+
+    </FrameLayout>
+</android.support.v4.widget.NestedScrollView>
