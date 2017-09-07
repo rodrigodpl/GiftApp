@@ -35,15 +35,6 @@
                 android:value="appteam.app.MyGiftlistActivity" />
         </activity>
         <activity
-            android:name=".MyProfileActivity"
-            android:label="@string/title_activity_my_profile"
-            android:parentActivityName=".MainMenuActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="appteam.app.MainMenuActivity" />
-        </activity>
-        <activity
             android:name=".FriendsActivity"
             android:label="@string/title_activity_friends"
             android:parentActivityName=".MainMenuActivity"
@@ -55,6 +46,15 @@
         <activity
             android:name=".GiftlistActivity"
             android:label="@string/title_activity_giftlist"
+            android:parentActivityName=".MainMenuActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="appteam.app.MainMenuActivity" />
+        </activity>
+        <activity
+            android:name=".MyProfileActivity"
+            android:label="@string/title_activity_my_profile"
             android:parentActivityName=".MainMenuActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
