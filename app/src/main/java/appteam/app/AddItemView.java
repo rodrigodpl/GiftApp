@@ -14,14 +14,15 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-/**
- * TODO: document your custom view class.
- */
+
 public class AddItemView extends RelativeLayout {
 
     EditText title;
     EditText url;
     EditText comm;
+    EditText price;
+    TextView latitude;
+    TextView longitude;
 
     public AddItemView(Context context) {
         super(context, null, R.attr.TabStyle);
@@ -44,6 +45,10 @@ public class AddItemView extends RelativeLayout {
         title = findViewById(R.id.item_title);
         url   = findViewById(R.id.url);
         comm  = findViewById(R.id.comments);
+        price = findViewById(R.id.price_additemtab);
+        latitude = findViewById(R.id.latitude);
+        longitude = findViewById(R.id.longitude);
+
     }
 
 }

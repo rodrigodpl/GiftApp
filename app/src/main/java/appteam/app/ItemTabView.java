@@ -4,30 +4,31 @@ package appteam.app;
 import android.content.Context;
 import android.util.AttributeSet;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
 public class ItemTabView extends RelativeLayout {
-    private Button cls_button;
-    private TextView description;
-    private ImageView thumbnail;
-    private ImageView icon;
-    private TextView title;
+
+    public TextView description;
+    public ImageView thumbnail;
+    public Button enter_button;
+    public Button edit_button;
+    public TextView title;
+    public TextView price;
+    public String url;
+    public String loc_lat;
+    public String loc_long;
 
     public ItemTabView(Context context) {
-        super(context, null, R.attr.TabStyle);
+        super(context);
         init();
     }
 
     public ItemTabView(Context context, AttributeSet attrs) {
-        super(context, attrs, R.attr.TabStyle);
+        super(context, attrs);
         init();
     }
 
@@ -38,11 +39,12 @@ public class ItemTabView extends RelativeLayout {
 
     private void init() {
         inflate(getContext(), R.layout.item_tab_view, this);
-        cls_button = findViewById(R.id.closeButton);
         description = findViewById(R.id.description);
         thumbnail = findViewById(R.id.thumbnail);
-        icon = findViewById(R.id.icon);
+        enter_button = findViewById(R.id.enter_btn);
         title = findViewById(R.id.title);
+        edit_button = findViewById(R.id.edit_btn);
+        price = findViewById(R.id.price_text);
 
     }
 

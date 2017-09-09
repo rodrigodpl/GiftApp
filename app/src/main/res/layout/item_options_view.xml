@@ -23,7 +23,7 @@
         android:layout_marginEnd="8dp">
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/icon"
             android:layout_width="220dp"
             android:layout_height="50dp"
             android:layout_marginBottom="8dp"
@@ -53,7 +53,7 @@
             app:layout_constraintRight_toRightOf="@+id/constraintLayout"
             app:layout_constraintVertical_bias="0.17000002"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintTop_toBottomOf="@+id/button6" />
+            app:layout_constraintTop_toBottomOf="@+id/icon" />
     </android.support.constraint.ConstraintLayout>
 
 </RelativeLayout>

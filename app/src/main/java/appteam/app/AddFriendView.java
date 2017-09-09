@@ -1,14 +1,7 @@
 package appteam.app;
 
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
 import android.util.AttributeSet;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -39,6 +32,5 @@ public class AddFriendView extends RelativeLayout {
         header = (TextView)findViewById(R.id.title);
         description = (TextView)findViewById(R.id.description);
         thumbnail = (ImageView)findViewById(R.id.thumbnail);
-        icon = (ImageView)findViewById(R.id.icon);
     }
 }

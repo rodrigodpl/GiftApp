@@ -32,6 +32,5 @@ public class FriendTabReducedView extends RelativeLayout {
         header = (TextView)findViewById(R.id.title);
         description = (TextView)findViewById(R.id.description);
         thumbnail = (ImageView)findViewById(R.id.thumbnail);
-        icon = (ImageView)findViewById(R.id.icon);
     }
 }
