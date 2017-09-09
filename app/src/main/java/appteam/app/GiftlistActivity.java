@@ -1,21 +1,17 @@
 package appteam.app;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class GiftlistActivity extends AppCompatActivity {
+
+    private DatabaseReference mDatabase;
 
     AddItemView addItemTab;
     @Override
@@ -38,7 +34,12 @@ public class GiftlistActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         addItemTab = (AddItemView) findViewById(R.id.AddItemTab);
+
+        //Aim the root of the database with the variable mDatabase.
+        mDatabase = FirebaseDatabase.getInstance().getReference();
     }
+
+
 
     public void CloseAddItemTab(View view){
 
@@ -69,6 +70,14 @@ public class GiftlistActivity extends AppCompatActivity {
     public void SaveItem(View view){
 
         ItemTabView test = (ItemTabView) findViewById(R.id.ExampleGift);
+
+        String name_new_item = addItemTab.title.getText().toString().trim();
+        String url_new_item = addItemTab.url.getText().toString().trim();
+        String comments_new_item = addItemTab.comm.getText().toString().trim();
+
+        mDatabase.child("Name").setValue(name_new_item);
+        mDatabase.child("url").setValue(url_new_item);
+        mDatabase.child("Comments").setValue(comments_new_item);
 
         test.SetDataFromTab(addItemTab);
     }
