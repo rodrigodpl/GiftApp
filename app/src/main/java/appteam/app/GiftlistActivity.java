@@ -17,8 +17,10 @@ import com.google.firebase.database.FirebaseDatabase;
 public class GiftlistActivity extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
-    private AddItemView addItemTab;
+    public AddItemView addItemTab;
     private LinearLayout giftlist_frame;
+    public ItemTabView selected_item;
+    public boolean editing = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +49,6 @@ public class GiftlistActivity extends AppCompatActivity {
     }
 
 
-
     public void CloseAddItemTab(View view){
 
         addItemTab.title.setText("");
@@ -58,56 +59,52 @@ public class GiftlistActivity extends AppCompatActivity {
     }
 
     public void OpenAddItemTab(View view){
-        if (findViewById(R.id.AddItemTab).getVisibility() == View.GONE) {
-            findViewById(R.id.AddItemTab).setVisibility(View.VISIBLE);
-        }
-    }
-
-    public void OpenAddItemTabLoaded(View view){
-
-        addItemTab.title.setText(R.string.example1);
-        addItemTab.url.setText(R.string.example2);
-        addItemTab.comm.setText(R.string.example3);
 
         if (findViewById(R.id.AddItemTab).getVisibility() == View.GONE) {
             findViewById(R.id.AddItemTab).setVisibility(View.VISIBLE);
         }
     }
+
 
     public void SaveItem(View view){
 
         // creating new tab in current screen
 
-        ItemTabView new_item_view = new ItemTabView(this.getApplicationContext());
+        if(!editing) {
 
-        new_item_view.title.setText(addItemTab.title.getText());
-        new_item_view.price.setText(addItemTab.price.getText());
-        new_item_view.description.setText(addItemTab.comm.getText());
+            ItemTabView new_item_view = new ItemTabView(this.getApplicationContext());
 
-        new_item_view.url = (addItemTab.url.getText().toString());
-        new_item_view.loc_lat = (addItemTab.latitude.getText().toString());
-        new_item_view.loc_long = addItemTab.longitude.getText().toString();
+            new_item_view.SetDataFromTab(addItemTab);
 
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-        new_item_view.setLayoutParams(params);
-        giftlist_frame.addView(new_item_view, 0);
+            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            new_item_view.setLayoutParams(params);
+            giftlist_frame.addView(new_item_view, 0);
 
 
-        //Local (method 1)
+            //Local (method 1)
 
-        mDatabase.child("Name").setValue(new_item_view.title.getText().toString().trim());
-        mDatabase.child("url").setValue(new_item_view.url);
-        mDatabase.child("Price").setValue(new_item_view.price.getText().toString().trim());
+            mDatabase.child("Name").setValue(new_item_view.title.getText().toString().trim());
+            mDatabase.child("url").setValue(new_item_view.url);
+            mDatabase.child("Price").setValue(new_item_view.price.getText().toString().trim());
 
-        //Own (method 2)
+            //Own (method 2)
 
-        mDatabase.child("Comments").setValue(new_item_view.description.getText().toString().trim());
-        mDatabase.child("Latitude").setValue(new_item_view.loc_lat);
-        mDatabase.child("Longitude").setValue(new_item_view.loc_long);
+            mDatabase.child("Comments").setValue(new_item_view.description.getText().toString().trim());
+            mDatabase.child("Latitude").setValue(new_item_view.loc_lat);
+            mDatabase.child("Longitude").setValue(new_item_view.loc_long);
 
+        }
+        else{
+
+            // mDatabase.update
+            // [...]
+
+
+            selected_item.SetDataFromTab(addItemTab);
+        }
 
         // no need to pass any view with this method, it should have 0 args
-        CloseAddItemTab(new_item_view);
+        CloseAddItemTab(view);
 
     }
 
