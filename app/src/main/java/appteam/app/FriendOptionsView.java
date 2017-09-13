@@ -29,7 +29,7 @@ public class FriendOptionsView extends RelativeLayout {
 
     private void init() {
         inflate(getContext(), R.layout.item_tab_view, this);
-        header = (TextView)findViewById(R.id.title);
+        header = (TextView)findViewById(R.id.friend_red_tab_profilename);
         description = (TextView)findViewById(R.id.description);
         thumbnail = (ImageView)findViewById(R.id.thumbnail);
     }

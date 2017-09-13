@@ -2,7 +2,6 @@
 package appteam.app;
 
 import android.content.Context;
-import android.opengl.Visibility;
 import android.util.AttributeSet;
 
 import android.view.View;
@@ -47,7 +46,7 @@ public class ItemTabView extends RelativeLayout {
         description = findViewById(R.id.description);
         thumbnail = findViewById(R.id.thumbnail);
         enter_button = findViewById(R.id.enter_btn);
-        title = findViewById(R.id.title);
+        title = findViewById(R.id.friend_red_tab_profilename);
         price = findViewById(R.id.price_text);
         url = findViewById(R.id.url);
 
@@ -56,7 +55,7 @@ public class ItemTabView extends RelativeLayout {
             @Override
             public void onClick(View view) {
 
-                StartEditMode(edit_button);
+                StartEditMode();
 
             }
         });
@@ -71,13 +70,13 @@ public class ItemTabView extends RelativeLayout {
         });
     }
 
-    public void StartEditMode(View view){
+    public void StartEditMode(){
 
         GiftlistActivity ga = (GiftlistActivity) getContext();
         ga.selected_item = this;
         ga.editing = true;
         ga.addItemTab.SetDataFromItemTab(this);
-        ga.OpenAddItemTab(view);
+        ga.OpenAddItemTab(this);
 
     }
 

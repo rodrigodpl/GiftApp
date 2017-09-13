@@ -55,4 +55,18 @@ public class FriendsActivity extends AppCompatActivity {
         //intent.putExtra(bool true so activity loads own or friend data)
         startActivity(intent);
     }
+
+    public void SearchFriendName(View view){
+
+        // search friends in DB: addFriendTab.friend_name.getText().toString();
+        // once results have been retrieved
+
+        for(int i = 0; i < 5; i++){    // provisional
+
+            addFriendTab.AddUserToSearchRes(getString(R.string.example1), getString(R.string.example2));
+
+        }
+
+    }
+
 }

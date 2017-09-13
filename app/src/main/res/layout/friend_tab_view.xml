@@ -15,7 +15,7 @@
         android:scaleType="centerCrop"/>
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/friend_red_tab_profilename"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="?android:attr/listPreferredItemPaddingLeft"
@@ -28,9 +28,9 @@
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/title"
-        android:layout_alignStart="@+id/title"
-        android:layout_below="@+id/title"
+        android:layout_alignLeft="@+id/friend_red_tab_profilename"
+        android:layout_alignStart="@+id/friend_red_tab_profilename"
+        android:layout_below="@+id/friend_red_tab_profilename"
         android:layout_toLeftOf="@+id/edit_btn"
         android:text="friend number"
         android:textAppearance="@android:style/TextAppearance.Holo.Small" />
@@ -50,7 +50,7 @@
         app:srcCompat="@android:drawable/ic_menu_preferences"
         android:layout_marginRight="23dp"
         android:layout_marginEnd="23dp"
-        android:layout_below="@+id/title"
+        android:layout_below="@+id/friend_red_tab_profilename"
         android:layout_toLeftOf="@+id/enter_btn"
         android:layout_toStartOf="@+id/enter_btn" />
 

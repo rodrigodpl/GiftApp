@@ -34,7 +34,7 @@ public class AddItemView extends RelativeLayout {
     private void init() {
         inflate(getContext(), R.layout.add_item_view, this);
 
-        title = findViewById(R.id.item_title);
+        title = findViewById(R.id.addfriends_name);
         url   = findViewById(R.id.url);
         comm  = findViewById(R.id.comments);
         price = findViewById(R.id.price_additemtab);

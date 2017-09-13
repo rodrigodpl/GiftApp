@@ -7,24 +7,34 @@
     android:background="@color/lightGray"
     android:padding="@dimen/tab_padding">
 
+    <TextView
+        android:id="@+id/friend_red_tab_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/friend_red_tab_profilename"
+        android:layout_alignStart="@+id/friend_red_tab_profilename"
+        android:layout_below="@+id/friend_red_tab_profilename"
+        android:layout_marginTop="7dp"
+        android:text="username"
+        android:textAppearance="@android:style/TextAppearance.Holo.Medium" />
+
     <ImageView
-        android:id="@+id/thumbnail"
         android:layout_width="72dip"
         android:layout_height="72dip"
         android:scaleType="centerCrop"
         android:src="@drawable/button_icon_bluesky" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/friend_red_tab_profilename"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="28dp"
-        android:layout_marginStart="28dp"
-        android:layout_toRightOf="@+id/thumbnail"
-        android:text="Friend name"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginTop="7dp"
+        android:text="profile name"
         android:textAppearance="@android:style/TextAppearance.Holo.Medium" />
 
 </RelativeLayout>

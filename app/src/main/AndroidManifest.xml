@@ -52,15 +52,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="appteam.app.MainMenuActivity" />
         </activity>
-        <activity
-            android:name=".MyProfileActivity"
-            android:label="@string/title_activity_my_profile"
-            android:parentActivityName=".MainMenuActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="appteam.app.MainMenuActivity" />
-        </activity>
     </application>
 
 </manifest>

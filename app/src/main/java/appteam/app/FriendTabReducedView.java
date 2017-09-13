@@ -7,18 +7,17 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class FriendTabReducedView extends RelativeLayout {
-    private TextView header;
-    private TextView description;
-    private ImageView thumbnail;
-    private ImageView icon;
+
+    public TextView username;
+    public TextView profile_name;
 
     public FriendTabReducedView(Context context) {
-        super(context, null, R.attr.TabStyle);
+        super(context);
         init();
     }
 
     public FriendTabReducedView(Context context, AttributeSet attrs) {
-        super(context, attrs, R.attr.TabStyle);
+        super(context, attrs);
         init();
     }
 
@@ -29,8 +28,7 @@ public class FriendTabReducedView extends RelativeLayout {
 
     private void init() {
         inflate(getContext(), R.layout.friend_tab_reduced_view, this);
-        header = (TextView)findViewById(R.id.title);
-        description = (TextView)findViewById(R.id.description);
-        thumbnail = (ImageView)findViewById(R.id.thumbnail);
+        username = findViewById(R.id.friend_red_tab_username);
+        profile_name = findViewById(R.id.friend_red_tab_profilename);
     }
 }

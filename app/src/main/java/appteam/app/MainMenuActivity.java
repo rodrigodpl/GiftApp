@@ -34,11 +34,6 @@ public class MainMenuActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
 
-            case R.id.myprofile_button:
-                intent = new Intent(this, MyProfileActivity.class);
-                startActivity(intent);
-                break;
-
             default:
                 break;
         }
