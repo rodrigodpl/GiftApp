@@ -5,7 +5,8 @@
     android:layout_width="250dp"
     android:layout_height="wrap_content"
     android:background="@color/lightGray"
-    android:padding="@dimen/tab_padding">
+    android:padding="@dimen/tab_padding"
+    android:onClick="SearchFriendName">
 
     <TextView
         android:id="@+id/friend_red_tab_username"

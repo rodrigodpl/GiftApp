@@ -44,10 +44,8 @@ public class AddFriendView extends RelativeLayout {
 
         new_user.username.setText(username);
         new_user.profile_name.setText(profilename);
-
         // new_user.thumbnail ...
 
-        //search_res.setOnClickListener
         search_res.addView(new_user);
 
     }

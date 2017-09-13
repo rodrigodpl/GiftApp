@@ -50,7 +50,7 @@ public class ItemTabView extends RelativeLayout {
         price = findViewById(R.id.price_text);
         url = findViewById(R.id.url);
 
-        edit_button = findViewById(R.id.edit_btn);
+        edit_button = findViewById(R.id.friend_tab_opt);
         edit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

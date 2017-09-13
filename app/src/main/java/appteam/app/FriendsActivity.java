@@ -7,10 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.content.Intent;
+import android.view.ViewGroup;
 
 public class FriendsActivity extends AppCompatActivity {
 
-    AddFriendView addFriendTab;
+    public AddFriendView addFriendTab;
+    public FriendOptionsView friendOptTab;
+    public FriendTabView selected_friend;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,33 +32,21 @@ public class FriendsActivity extends AppCompatActivity {
         });
         fab.bringToFront();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         addFriendTab = (AddFriendView) findViewById(R.id.AddFriendTab);
+        friendOptTab = (FriendOptionsView) findViewById(R.id.FriendOptionsTab);
 
-    }
-
-    public void CloseAddFriendTab(View view){
-
-        findViewById(R.id.AddFriendTab).setVisibility(View.GONE);
-    }
-
-    public void OpenAddFriendTab(View view){
-        if (findViewById(R.id.AddFriendTab).getVisibility() == View.GONE) {
-            findViewById(R.id.AddFriendTab).setVisibility(View.VISIBLE);
-        }
     }
 
     public void DeleteFriend(View view) {
 
-        //friend id coming from view context (fragment)
-        //DB.deleteFriend(friend_id)
+        // DB delete friend
+
+        ViewGroup vg = (ViewGroup) findViewById(R.id.friendlistFrame);
+        vg.removeView(selected_friend);
+
     }
 
-    public void OpenGiftlist(View view) {
-        Intent intent = new Intent(this, GiftlistActivity.class);
-
-        //intent.putExtra(bool true so activity loads own or friend data)
-        startActivity(intent);
-    }
 
     public void SearchFriendName(View view){
 
@@ -67,6 +59,28 @@ public class FriendsActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    public void CloseFriendOptTab(View view){
+
+        friendOptTab.setVisibility(View.GONE);
+    }
+
+    public void OpenFriendOptTab(){
+        if (friendOptTab.getVisibility() == View.GONE) {
+            friendOptTab.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void CloseAddFriendTab(View view){
+
+        addFriendTab.setVisibility(View.GONE);
+    }
+
+    public void OpenAddFriendTab(View view){
+        if (addFriendTab.getVisibility() == View.GONE) {
+            addFriendTab.setVisibility(View.VISIBLE);
+        }
     }
 
 }

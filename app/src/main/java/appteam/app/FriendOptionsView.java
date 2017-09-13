@@ -2,23 +2,20 @@ package appteam.app;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class FriendOptionsView extends RelativeLayout {
-    private TextView header;
-    private TextView description;
-    private ImageView thumbnail;
-    private ImageView icon;
 
     public FriendOptionsView(Context context) {
-        super(context, null, R.attr.TabStyle);
+        super(context);
         init();
     }
 
     public FriendOptionsView(Context context, AttributeSet attrs) {
-        super(context, attrs, R.attr.TabStyle);
+        super(context, attrs);
         init();
     }
 
@@ -28,9 +25,7 @@ public class FriendOptionsView extends RelativeLayout {
     }
 
     private void init() {
-        inflate(getContext(), R.layout.item_tab_view, this);
-        header = (TextView)findViewById(R.id.friend_red_tab_profilename);
-        description = (TextView)findViewById(R.id.description);
-        thumbnail = (ImageView)findViewById(R.id.thumbnail);
+        inflate(getContext(), R.layout.friend_options_view, this);
+        //header = (TextView)findViewById(R.id.friend_red_tab_profilename);
     }
 }
