@@ -36,7 +36,8 @@
         android:layout_toLeftOf="@+id/enter_btn"
         android:layout_toRightOf="@+id/thumbnail"
         android:text="Gift title"
-        android:textAppearance="@android:style/TextAppearance.Holo.Medium" />
+        android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/description"
@@ -67,7 +68,7 @@
         android:layout_alignLeft="@+id/description"
         android:layout_alignStart="@+id/description"
         android:layout_below="@+id/friend_tab_opt"
-        android:text="XX€" />
+        android:text="XX" />
 
     <FrameLayout
         android:id="@+id/more_info_frame"
@@ -83,7 +84,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/longitude"
+                android:id="@+id/longitude_itemTAb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -99,7 +100,7 @@
                 app:layout_constraintVertical_bias="1.0" />
 
             <TextView
-                android:id="@+id/latitude_addTab"
+                android:id="@+id/latitude_itemTab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -120,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="84dp"
                 android:layout_marginTop="8dp"
                 android:text="longitude:"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -179,6 +180,15 @@
                 app:layout_constraintVertical_bias="0.216" />
         </android.support.constraint.ConstraintLayout>
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/currency_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/price_text"
+        android:layout_toEndOf="@+id/price_text"
+        android:layout_toRightOf="@+id/price_text"
+        android:text="€" />
 
 
 </RelativeLayout>

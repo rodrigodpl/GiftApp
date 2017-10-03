@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.google.firebase.database.DatabaseReference;
 
 
+
 public class ItemTabView extends RelativeLayout {
 
     public TextView description;
@@ -21,9 +22,16 @@ public class ItemTabView extends RelativeLayout {
     public Button edit_button;
     public TextView title;
     public TextView price;
+    public TextView currency_tag;
     public TextView url;
     public TextView loc_lat;
     public TextView loc_long;
+
+    public static final int EURO = 1;
+    public static final int US_DOLLAR = 2;
+    public static final int YEN_YUANG = 3;
+    public static final int GB_POUND = 4;
+
     private boolean expanded = false;
 
     public ItemTabView(Context context) {
@@ -48,26 +56,23 @@ public class ItemTabView extends RelativeLayout {
         enter_button = findViewById(R.id.enter_btn);
         title = findViewById(R.id.friend_red_tab_profilename);
         price = findViewById(R.id.price_text);
+        currency_tag = findViewById(R.id.currency_tag);
         url = findViewById(R.id.url);
+        loc_lat = findViewById(R.id.latitude_itemTab);
+        loc_long = findViewById(R.id.longitude_itemTAb);
 
         edit_button = findViewById(R.id.friend_tab_opt);
         edit_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-                StartEditMode();
-
-            }
+            public void onClick(View view) {StartEditMode();}
         });
 
         Tab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-                ExpandTab();
-
-            }
+            public void onClick(View view) {ExpandTab();}
         });
+
+
     }
 
     public void StartEditMode(){
@@ -80,15 +85,25 @@ public class ItemTabView extends RelativeLayout {
 
     }
 
-    public void SetDataFromTab(AddItemView AddItemTab){
+    public void SetDataFromTab(AddItemView AddItemTab) {
 
         title.setText(AddItemTab.title.getText());
-        description.setText(AddItemTab.comm.getText());
-        price.setText(AddItemTab.price.getText());
 
-        url.setText(AddItemTab.url.getText());
+        // if(...)
         loc_lat.setText(AddItemTab.latitude.getText());
         loc_long.setText(AddItemTab.longitude.getText());
+
+        if(AddItemTab.comm.length() > 0)
+            description.setText(AddItemTab.comm.getText());
+
+        if(AddItemTab.url.length() > 0)
+            url.setText(AddItemTab.url.getText());
+
+        if (AddItemTab.price.length() > 0) {
+
+            currency_tag.setText(AddItemTab.currency_selector.getSelectedItem().toString());
+            price.setText(AddItemTab.price.getText());
+        }
         //     ...
     }
 

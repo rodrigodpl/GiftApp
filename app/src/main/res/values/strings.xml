@@ -29,4 +29,11 @@
     <string name="example2">example2</string>
     <string name="example3">example3</string>
 
+    <string-array name="Currencies_array">
+        <item name="euro">€</item>
+        <item name="US_Dollar">$</item>
+        <item name="Yen/Yuang">¥</item>
+        <item name="GB_Pound">£</item>
+    </string-array>
+
 </resources>

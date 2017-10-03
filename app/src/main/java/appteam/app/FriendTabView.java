@@ -48,7 +48,6 @@ public class FriendTabView extends RelativeLayout {
         // enter in fa.friendOptTab and setup it with DB data
 
         fa.OpenFriendOptTab();
-        fa.CloseFriendOptTab(this);
 
     }
 }

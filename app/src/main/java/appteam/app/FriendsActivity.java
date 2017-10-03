@@ -45,6 +45,7 @@ public class FriendsActivity extends AppCompatActivity {
         ViewGroup vg = (ViewGroup) findViewById(R.id.friendlistFrame);
         vg.removeView(selected_friend);
 
+        CloseFriendOptTab(view);
     }
 
 
